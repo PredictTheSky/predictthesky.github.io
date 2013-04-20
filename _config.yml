@@ -1,2 +1,11 @@
 markdown: rdiscount
 pygments: true
+navigation:
+- text: Home
+  url: /index.html
+- text: About
+  url: /about.html
+- text: News
+  url: /news.html
+- text: Developers
+  url: /developers.html

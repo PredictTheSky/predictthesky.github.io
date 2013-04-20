@@ -70,11 +70,22 @@
     <div class="container-narrow">
 
       <div class="masthead">
-        <ul class="nav nav-pills pull-right">
+         <!--        
+         <ul class="nav nav-pills pull-right">
           <li class="active"><a href="/index.html">Home</a></li>
           <li><a href="/about.html">About</a></li>
           <li><a href="/news.html">News</a></li>
           <li><a href="/developers.html">Developers</a></li>
+        </ul>
+        -->
+        <ul class="nav nav-pills pull-right">
+        {% for link in site.navigation %}
+          {% assign current = nil %}
+          {% if page.url == link.url %}
+            {% assign current = 'active' %}
+          {% endif %}
+        <li class="{{ current }}"><a href="{{ link.url }}">{{ link.text }}</a></li>
+        {% endfor %}
         </ul>
         <h3 class="muted">Predict the Sky</h3>
       </div>
