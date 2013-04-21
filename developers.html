@@ -24,6 +24,62 @@ title: Developers
 
     <h3>Retrieving Space Events</h3>
 
+    <p>Events are the core purpose of the API. It returns a list of space objects
+       (see below) which are visible from your current location, scored by a
+       likelyhood that it can be seen. A weather object for the start and end of the
+       event is returned.</p>
+
+    <div class="">
+    <table class="table table-striped">
+      <tr>
+        <th>Method</th>
+        <th>Route</th>
+        <th>Arguments</th>
+      </tr>
+      <tr>
+        <td><span class="label label-info">GET</span></td>
+        <td><code>/events/all</code></td>
+        <td>lat, lng, limit, date</td>
+      </tr>
+      <tr>
+        <td><span class="label label-info">GET</span></td>
+        <td><code>/event/&lt;category&gt;</code></td>
+        <td>lat, lng, limit, date</td>
+      </tr>
+    </table>
+    </div>
+
+    <div class="">
+      <pre>{
+    "space_events": [
+        {
+            "object": {
+                "id": "0123456789",
+                "name": "International Space Station",
+                "category": "satellite"
+            },
+            "start": {
+                "timestamp": ""
+                "location": {
+                    "altitude": "",
+                    "azimuth": ""
+                }
+                "weather": {
+                    "cloud_cover": "",
+                    "chance_of_prep": "",
+                    "temperature": 0,
+                    "feels_like_temperature": 0,
+                    "visibility": 0
+                }
+            },
+            "end": {
+            
+            }
+        }
+    ]
+}</pre>
+    </div>
+
     <h3>Retrieving Possible Space Objects</h3>
 
     <p>Predict the Sky stores a list of space objects that it can provide data for.
@@ -51,7 +107,7 @@ title: Developers
       <tr>
         <td><span class="label label-info">GET</span></td>
         <td><code>/objects/&lt;category&gt;</code></td>
-        <td>category: (below).</td>
+        <td>None</td>
       </tr>
     </table>
     </div>
