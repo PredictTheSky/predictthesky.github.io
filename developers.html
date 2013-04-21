@@ -47,6 +47,15 @@ title: Developers
         <td>lat, lng, limit, date</td>
       </tr>
     </table>
+
+    <h5>Notes</h5>
+    <ul>
+      <li><code>lat</code> &amp; <code>lng</code> expect decimal latitude and longitude values.</li>
+      <li><code>limit</code> assumes an integer. Default is 5.</li>
+      <li><code>date</code> expects an <a href="http://xkcd.com/1179/">ISO 8601</a> 
+          formatted date.</li>
+    <ul>
+
     </div>
 
     <div class="">
@@ -73,7 +82,18 @@ title: Developers
                 }
             },
             "end": {
-            
+                "timestamp": ""
+                    "location": {
+                        "altitude": "",
+                        "azimuth": ""
+                    }
+                "weather": {
+                    "cloud_cover": "",
+                    "chance_of_prep": "",
+                    "temperature": 0,
+                    "feels_like_temperature": 0,
+                    "visibility": 0
+                }
             }
         }
     ]
