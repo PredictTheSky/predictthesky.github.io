@@ -5,6 +5,118 @@ title: Developers
 
 <div class="row">
   <div class="span9">
-    <p>This will be the documentation.</p>
+    <div class="alert alert-block">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <h4>Work in Progress!</h4>
+      Most of these routes won't be implemented whilst you read this. But they will
+      be, trust us.
+    </div>
+    
+    <h3>Introduction</h3>
+
+    <p>It all starts with the root URL, the routes below are all based around this:</p>
+
+    <pre>http://api.predictthesky.org</pre>
+
+    <p>You should set the Media Type; by default: <code>application/json</code>. 
+    But it will just return JSON regardless. It doesn't talk anything else (but 
+    this might change.)</p>
+
+    <h3>Retrieving Space Events</h3>
+
+    <h3>Retrieving Possible Space Objects</h3>
+
+    <p>Predict the Sky stores a list of space objects that it can provide data for.
+       This isn't comprehensive like <a href="https://www.space-track.org/">Space
+       Track</a> is, but enough to return a good list of objects.</p>
+
+    <p>But, to return just the objects themselves in the events calls (above), you 
+       need to know the identifier used for them. You can get all or filter by
+       categories:</p>
+    
+    <h4>Routes</h4>
+
+    <div class="">
+    <table class="table table-striped">
+      <tr>
+        <th>Method</th>
+        <th>Route</th>
+        <th>Arguments</th>
+      </tr>
+      <tr>
+        <td><span class="label label-info">GET</span></td>
+        <td><code>/objects/all</code></td>
+        <td>None</td>
+      </tr>
+      <tr>
+        <td><span class="label label-info">GET</span></td>
+        <td><code>/objects/&lt;category&gt;</code></td>
+        <td>category: (below).</td>
+      </tr>
+    </table>
+    </div>
+    
+    <div class="">
+    <h4>The possible category values are:</h4>
+    </div>    
+
+    <div class="">
+    <table class="table table-striped">
+      <tr>
+        <th>Identifier</th>
+        <th>Notes</th>
+      </tr>
+      <tr>
+        <td>satellites</td>
+        <td>Including the ISS.</td>
+      </tr>
+      <tr>
+        <td>meteor_showers</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>lunar_eclipses</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>aurora</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>planets</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>moon_phase</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>comets</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td>iridium_flare</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+    </div>
+
+    <h4>Response</h4>
+
+    <p>Both space objects calls return a collection of object dictionaries, they
+       look like this:</p>
+
+    <div class="">
+      <pre>{
+    "space_objects": [
+        {
+            "id": "0123456789",
+            "name": "International Space Station",
+            "category": "satellite"
+        }
+    ]
+}</pre>
+    </div>
+
   </div>
 </div>
